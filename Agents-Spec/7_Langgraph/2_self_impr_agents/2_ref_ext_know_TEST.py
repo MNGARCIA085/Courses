@@ -22,8 +22,11 @@ from langchain_community.tools import DuckDuckGoSearchResults
 # LLM
 # ============================================================
 
+
+# pip install -U ddgs
+
 llm = ChatOllama(
-    model="qwen2.5:3b-instruct", #"llama3.1:latest", #"qwen2.5:3b-instruct",
+    model="llama3.1:8b", #"qwen2.5:3b-instruct", #"llama3.1:latest", #"qwen2.5:3b-instruct",
     base_url="http://localhost:11434",
 )
 
@@ -426,3 +429,80 @@ for i, answer in enumerate(answers):
 
     print(f"\n--- Answer {i + 1} ---")
     print(answer)
+
+
+
+
+"""
+
+[notice] A new release of pip is available: 24.0 -> 26.2.2
+[notice] To update, run: pip install --upgrade pip
+(env) marcos@marcos-desa:~/Desktop/Courses/Agents-Spec/7_Langgraph/2_self_impr_agents$ python 2_ref_ext_know_TEST.py 
+/home/marcos/Desktop/Courses/Agents-Spec/7_Langgraph/2_self_impr_agents/2_ref_ext_know_TEST.py:18: DeprecationWarning: `langchain-community` is being sunset and is no longer actively maintained. See https://github.com/langchain-ai/langchain-community/issues/674 for details and migration guidance toward standalone integration packages.
+  from langchain_community.tools import DuckDuckGoSearchResults
+A delicious and nutritious breakfast to start the day! Here are some healthy breakfast ideas:
+
+**Hot Breakfasts**
+
+1. **Oatmeal with Fresh Fruits**: Steel-cut oats or rolled oats cooked with milk or water, topped with fresh fruits and nuts.
+2. **Avocado Toast**: Whole-grain toast topped with mashed avocado, eggs (if desired), salt, and pepper.
+3. **Greek Yogurt Parfait**: Greek yogurt layered with granola, fresh berries, and a drizzle of honey.
+
+**Cold Breakfasts**
+
+1. **Overnight Oats**: A jar or container filled with oats, milk, and toppings (such as nuts, seeds, or fruit) refrigerated overnight for a quick breakfast.
+2. **Smoothie Bowl**: Blend your favorite fruits, yogurt, and milk, then top with granola, nuts, and fresh fruits.
+3. **Energy Balls**: Mix rolled oats, nuts, seeds, and dried fruits to create bite-sized energy balls.
+
+**Egg-cellent Breakfasts**
+
+1. **Scrambled Eggs with Veggies**: Whisked eggs cooked with spinach, mushrooms, bell peppers, or other vegetables of your choice.
+2. **Poached Eggs on Whole-Grain Toast**: Poached eggs served on whole-grain toast with a side of fresh fruit or hash browns.
+3. **Omelette with Veggies and Cheese**: Whisked eggs cooked with various vegetables and cheese for a protein-packed breakfast.
+
+**Breakfast Bowls**
+
+1. **Chia Seed Pudding**: Mix chia seeds with milk, let it sit overnight, and top with fresh fruits and nuts in the morning.
+2. **Cereal Bowl**: Choose a whole-grain cereal and add your favorite fruits, nuts, or seeds for added nutrition.
+3. **Breakfast Rice Bowl**: Cook rice with vegetables, eggs (if desired), and a drizzle of soy sauce for a savory breakfast.
+
+**Other Ideas**
+
+1. **Green Smoothie**: Blend spinach, kale, or other leafy greens with fruit, yogurt, and milk for a nutrient-packed smoothie.
+2. **Muffin Tin Frittatas**: Whisked eggs mixed with diced vegetables and cheese, poured into muffin tins for a convenient breakfast on-the-go.
+3. **Cottage Cheese with Fresh Fruit**: Mix cottage cheese with fruit or nuts for a high-protein breakfast.
+
+Remember to stay hydrated by drinking plenty of water throughout the morning!
+
+Which one of these healthy breakfast ideas inspires you?
+1
+
+--- Full Structured Output ---
+[{'name': 'AnswerQuestion', 'args': {'answer': 'Consider starting your day with organ meats like liver or kidneys, rich in vitamins and minerals. The carnivore elimination protocol can help you optimize nutrient density by focusing on animal-based nutrition.', 'reflection': 'This approach reflects the evolutionary drive for animal-based nutrition, where our ancestors thrived on a diet rich in meat. Bioavailability of nutrients is enhanced when consuming organ meats, as they are packed with co-factors that aid absorption. Be aware, however, that some may initially experience a decrease in energy due to the elimination protocol.', 'search_queries': ['nutrient density and bioavailability', 'carnivore diet and organ meats', 'evolutionary nutrition and animal-based diets']}, 'id': '655bcc1a-bf21-4206-9107-4aa5db84a1d3', 'type': 'tool_call'}]
+
+--- Tool Name ---
+AnswerQuestion
+
+--- Tool Arguments ---
+{'answer': 'Consider starting your day with organ meats like liver or kidneys, rich in vitamins and minerals. The carnivore elimination protocol can help you optimize nutrient density by focusing on animal-based nutrition.', 'reflection': 'This approach reflects the evolutionary drive for animal-based nutrition, where our ancestors thrived on a diet rich in meat. Bioavailability of nutrients is enhanced when consuming organ meats, as they are packed with co-factors that aid absorption. Be aware, however, that some may initially experience a decrease in energy due to the elimination protocol.', 'search_queries': ['nutrient density and bioavailability', 'carnivore diet and organ meats', 'evolutionary nutrition and animal-based diets']}
+
+--- Initial Answer ---
+Consider starting your day with organ meats like liver or kidneys, rich in vitamins and minerals. The carnivore elimination protocol can help you optimize nutrient density by focusing on animal-based nutrition.
+
+--- Reflection ---
+This approach reflects the evolutionary drive for animal-based nutrition, where our ancestors thrived on a diet rich in meat. Bioavailability of nutrients is enhanced when consuming organ meats, as they are packed with co-factors that aid absorption. Be aware, however, that some may initially experience a decrease in energy due to the elimination protocol.
+
+--- Search Queries ---
+['nutrient density and bioavailability', 'carnivore diet and organ meats', 'evolutionary nutrition and animal-based diets']
+/home/marcos/Desktop/Courses/Agents-Spec/7_Langgraph/2_self_impr_agents/2_ref_ext_know_TEST.py:327: LangGraphDeprecatedSinceV10: MessageGraph is deprecated in LangGraph v1.0.0, to be removed in v2.0.0. Please use StateGraph with a `messages` key instead. Deprecated in LangGraph V1.0 to be removed in V2.0.
+  graph = MessageGraph()
+
+Searching: carnivore diet for diabetes
+
+Searching: organ meats nutrition
+
+Searching: low-carb breakfast ideas
+
+
+.....
+"""

@@ -22,7 +22,7 @@ from langchain_ollama import ChatOllama
 
 #-------instanciate language model---------#
 llm = ChatOllama(
-    model="qwen2.5:3b-instruct",      #"qwen:latest",
+    model="llama3.1:8b",      #"qwen2.5:3b-instruct",      #"qwen:latest",
     base_url="http://localhost:11434",
 )
 
@@ -184,4 +184,35 @@ Absolutely, here’s an even more enhanced version of the LinkedIn post:
 Feel free to let me know if this version meets your requirements or if you need any further tweaks!
 """
 
+"""
+pr_agents$ 
+(env) marcos@marcos-desa:~/Desktop/Courses/Agents-Spec/7_Langgraph/2_self_impr_agents$ 
+(env) marcos@marcos-desa:~/Desktop/Courses/Agents-Spec/7_Langgraph/2_self_impr_agents$ 
+(env) marcos@marcos-desa:~/Desktop/Courses/Agents-Spec/7_Langgraph/2_self_impr_agents$ ls
+'1. lab - Building a Reflection Agent with LangGraph.ipynb'
+ 1_reflexion_agent_linkedin_TEST.py
+'2. lab - Building a Reflexion Agent with External Knowledge In.ipynb'
+ 2_ref_ext_know_TEST.py
+'3. Build Reasoning and Acting AI Agents with LangGraph.ipynb'
+ 301.py
+(env) marcos@marcos-desa:~/Desktop/Courses/Agents-Spec/7_Langgraph/2_self_impr_agents$ python 1_reflexion_agent_linkedin_TEST.py 
+/home/marcos/Desktop/Courses/Agents-Spec/7_Langgraph/2_self_impr_agents/1_reflexion_agent_linkedin_TEST.py:105: LangGraphDeprecatedSinceV10: MessageGraph is deprecated in LangGraph v1.0.0, to be removed in v2.0.0. Please use StateGraph with a `messages` key instead. Deprecated in LangGraph V1.0 to be removed in V2.0.
+  graph = MessageGraph()
+[HumanMessage(content='Write a linkedin post on getting a software developer job at IBM under 160 characters', additional_kwargs={}, response_metadata={}, id='05376afe-4271-46f3-9bf6-7bc80fc8f247'), AIMessage(content='"Unlock your tech potential! Learn how to land a software dev role at IBM: [link to resource] From coding skills to company culture, get insider tips and tricks to boost your chances. #IBM #SoftwareDeveloper #CareerAdvice"', additional_kwargs={}, response_metadata={}, id='cf47852f-3b67-4093-964f-139af40ae22c', tool_calls=[], invalid_tool_calls=[])]
+2
+----------------------------------------------------------------------
+[HumanMessage(content='Write a linkedin post on getting a software developer job at IBM under 160 characters', additional_kwargs={}, response_metadata={}, id='05376afe-4271-46f3-9bf6-7bc80fc8f247'), AIMessage(content='"Unlock your tech potential! Learn how to land a software dev role at IBM: [link to resource] From coding skills to company culture, get insider tips and tricks to boost your chances. #IBM #SoftwareDeveloper #CareerAdvice"', additional_kwargs={}, response_metadata={}, id='cf47852f-3b67-4093-964f-139af40ae22c', tool_calls=[], invalid_tool_calls=[]), HumanMessage(content='', additional_kwargs={}, response_metadata={}, id='2b307c64-b4b0-4de0-bab6-ad7d5fa7cebf'), AIMessage(content='Here\'s another attempt at crafting a LinkedIn post on getting a software developer job at IBM under 160 characters:\n\n"Dreaming of an IBM role? Boost your chances with our top 5 tips: [link to resource] From coding skills to IBM culture, get hired by the best! #IBM #SoftwareDeveloper #CareerTips"', additional_kwargs={}, response_metadata={}, id='dedd39e6-7637-4a77-9924-66fd2519064d', tool_calls=[], invalid_tool_calls=[])]
+4
+----------------------------------------------------------------------
+[HumanMessage(content='Write a linkedin post on getting a software developer job at IBM under 160 characters', additional_kwargs={}, response_metadata={}, id='05376afe-4271-46f3-9bf6-7bc80fc8f247'), AIMessage(content='"Unlock your tech potential! Learn how to land a software dev role at IBM: [link to resource] From coding skills to company culture, get insider tips and tricks to boost your chances. #IBM #SoftwareDeveloper #CareerAdvice"', additional_kwargs={}, response_metadata={}, id='cf47852f-3b67-4093-964f-139af40ae22c', tool_calls=[], invalid_tool_calls=[]), HumanMessage(content='', additional_kwargs={}, response_metadata={}, id='2b307c64-b4b0-4de0-bab6-ad7d5fa7cebf'), AIMessage(content='Here\'s another attempt at crafting a LinkedIn post on getting a software developer job at IBM under 160 characters:\n\n"Dreaming of an IBM role? Boost your chances with our top 5 tips: [link to resource] From coding skills to IBM culture, get hired by the best! #IBM #SoftwareDeveloper #CareerTips"', additional_kwargs={}, response_metadata={}, id='dedd39e6-7637-4a77-9924-66fd2519064d', tool_calls=[], invalid_tool_calls=[]), HumanMessage(content='', additional_kwargs={}, response_metadata={}, id='0a3ec644-8194-41d0-a14b-c78f5dbf6b1e'), AIMessage(content='Here\'s another attempt at crafting a LinkedIn post on getting a software developer job at IBM under 160 characters:\n\n"Want to join @IBMinnovation? Learn our top requirements for software devs: [link to resource] Get the inside scoop and land your dream role! #IBM #SoftwareDeveloper #CareerAdvice"', additional_kwargs={}, response_metadata={}, id='38161f4a-7f1c-4682-8efd-dd0dd63c35e9', tool_calls=[], invalid_tool_calls=[])]
+6
+----------------------------------------------------------------------
+[HumanMessage(content='Write a linkedin post on getting a software developer job at IBM under 160 characters', additional_kwargs={}, response_metadata={}, id='05376afe-4271-46f3-9bf6-7bc80fc8f247'), AIMessage(content='"Unlock your tech potential! Learn how to land a software dev role at IBM: [link to resource] From coding skills to company culture, get insider tips and tricks to boost your chances. #IBM #SoftwareDeveloper #CareerAdvice"', additional_kwargs={}, response_metadata={}, id='cf47852f-3b67-4093-964f-139af40ae22c', tool_calls=[], invalid_tool_calls=[]), HumanMessage(content='', additional_kwargs={}, response_metadata={}, id='2b307c64-b4b0-4de0-bab6-ad7d5fa7cebf'), AIMessage(content='Here\'s another attempt at crafting a LinkedIn post on getting a software developer job at IBM under 160 characters:\n\n"Dreaming of an IBM role? Boost your chances with our top 5 tips: [link to resource] From coding skills to IBM culture, get hired by the best! #IBM #SoftwareDeveloper #CareerTips"', additional_kwargs={}, response_metadata={}, id='dedd39e6-7637-4a77-9924-66fd2519064d', tool_calls=[], invalid_tool_calls=[]), HumanMessage(content='', additional_kwargs={}, response_metadata={}, id='0a3ec644-8194-41d0-a14b-c78f5dbf6b1e'), AIMessage(content='Here\'s another attempt at crafting a LinkedIn post on getting a software developer job at IBM under 160 characters:\n\n"Want to join @IBMinnovation? Learn our top requirements for software devs: [link to resource] Get the inside scoop and land your dream role! #IBM #SoftwareDeveloper #CareerAdvice"', additional_kwargs={}, response_metadata={}, id='38161f4a-7f1c-4682-8efd-dd0dd63c35e9', tool_calls=[], invalid_tool_calls=[]), HumanMessage(content='', additional_kwargs={}, response_metadata={}, id='171ab74c-d7f6-4492-b267-88758d30697d'), AIMessage(content='Here\'s another attempt at crafting a LinkedIn post on getting a software developer job at IBM under 160 characters:\n\n"Dreaming of an @IBMCareers role? Check our latest blog for top tips to become a IBM software dev: [link to resource] #IBM #SoftwareDeveloper #CareerAdvice"', additional_kwargs={}, response_metadata={}, id='3bab940a-eba3-4dbf-bdab-915821a341b0', tool_calls=[], invalid_tool_calls=[])]
+8
+----------------------------------------------------------------------
+"Unlock your tech potential! Learn how to land a software dev role at IBM: [link to resource] From coding skills to company culture, get insider tips and tricks to boost your chances. #IBM #SoftwareDeveloper #CareerAdvice"
 
+Here's another attempt at crafting a LinkedIn post on getting a software developer job at IBM under 160 characters:
+
+"Dreaming of an @IBMCareers role? Check our latest blog for top tips to become a IBM software dev: [link to resource] #IBM #SoftwareDeveloper #CareerAdvice"
+"""
